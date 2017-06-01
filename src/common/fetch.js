@@ -14,9 +14,9 @@ export function fetch_movie(opt) {
     timeout: 3000,
   });
 
-  return result.then(response=> {
+  return result.then(response => {
     return response.json();
-  }).catch(err=>
+  }).catch(err =>
     console.log('parsing failed', err)
   );
 }
@@ -31,9 +31,9 @@ export function fetch_movieDetail(opt) {
     timeout: 3000,
   });
 
-  return result.then(response=> {
+  return result.then(response => {
     return response.json();
-  }).catch(err=>
+  }).catch(err =>
     console.log('parsing failed', err)
   );
 }
@@ -50,20 +50,23 @@ export function fetch_login(opt) {
   }
   params = params.substring(1);
   let LOGIN_PATH = `${config.LOGIN_PATH}?${params}`;
-  return fetch(LOGIN_PATH, {method: 'GET'})
+  return fetch(LOGIN_PATH, {
+      method: 'GET'
+    })
     .then(response => {
       return response.json()
     })
-    .catch(err=>
+    .catch(err =>
       console.log('parsing failed', err)
     )
 }
 
 // 获取新闻热点
 export function fetch_spot(opt) {
-  return fetch(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${opt.type}&count=${opt.count}`,
-    {method: 'GET'})
-    .then(response=> {
+  return fetch(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${opt.type}&count=${opt.count}`, {
+      method: 'GET'
+    })
+    .then(response => {
       return response.json();
     })
 }

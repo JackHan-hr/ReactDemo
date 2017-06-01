@@ -1,60 +1,66 @@
 import React from 'react'
-import {Router, Route,  IndexRoute, Redirect, hashHistory} from 'react-router'
+import {
+  Router,
+  Route,
+  IndexRoute,
+  Redirect,
+  hashHistory
+} from 'react-router'
 import AppContainer from '../containers/AppContainer'
 import HomeContainer from '../containers/HomeContainer'
 
 const BookContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/BookContainer').default)
-  },'BookContainer')
+  }, 'BookContainer')
 }
 
 const BookDetailContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/BookDetailContainer').default)
-  },'BookDetailContainer')
+  }, 'BookDetailContainer')
 }
 
 const MovieContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/MovieContainer').default)
-  },'MovieContainer')
+  }, 'MovieContainer')
 }
 
 const MovieDetailContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/MovieDetailContainer').default)
-  },'MovieDetailContainer')
+  }, 'MovieDetailContainer')
 }
 
 const MusicContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/MusicContainer').default)
-  },'MusicContainer')
+  }, 'MusicContainer')
 }
 
 const MusicDetailContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/MusicDetailContainer').default)
-  },'MusicDetailContainer')
+  }, 'MusicDetailContainer')
 }
 
 const SpotContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/SpotContainer').default)
-  },'SpotContainer')
+  }, 'SpotContainer')
 }
 
 const SpotDetailContainer = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/SpotDetailContainer').default)
-  },'SpotDetailContainer')
+  }, 'SpotDetailContainer')
 }
 
 const NotFoundPage = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../containers/NotFoundPage').default)
-  },'NotFoundPage')
+  }, 'NotFoundPage')
 }
 
 /*const HomeContainer = (location, cb) => {
@@ -84,4 +90,3 @@ const RootRoter = (
   </Router>
 )
 export default RootRoter
-
